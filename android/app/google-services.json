@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "771237273900",
+    "project_id": "dalel-ec05b",
+    "storage_bucket": "dalel-ec05b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771237273900:android:56e3c6b8ea567a8a14cc89",
+        "android_client_info": {
+          "package_name": "com.example.dalell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771237273900-90sluspsc4avtmrl8nh4pt1vu2og9mmq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMYZ5o2yxu7doYQID_I4ofGRJhZWw6nbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771237273900-90sluspsc4avtmrl8nh4pt1vu2og9mmq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
