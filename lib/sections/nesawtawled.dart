@@ -58,7 +58,7 @@ class _NesaState extends State<Nesa> {
                 price:'سعر الكشف : ${nesa[index]['price']} جنيه ',
                 address:'العنوان : ${nesa[index]['address']}',
                 dates:'مواعيد العمل : ${nesa[index]['dates']}',
-                phone:'رقم الموبايل : ${nesa[index]['phone']}',
+                phone:'tel: ${nesa[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });

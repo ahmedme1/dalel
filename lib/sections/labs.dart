@@ -57,7 +57,7 @@ class _LabsState extends State<Labs> {
                 text:'${labs[index]['name']}',
                 address:'العنوان : ${labs[index]['address']}',
                 dates:'مواعيد العمل : ${labs[index]['dates']}',
-                phone:'رقم الموبايل : ${labs[index]['phone']}',
+                phone:'tel: ${labs[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });

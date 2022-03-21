@@ -56,10 +56,10 @@ class _BatnaState extends State<Batna> {
           {
             return Cust_Container(
                 text:'${batna[index]['name']}',
-                price:'سعر الكشف : ${batna[index]['price']} جنيه ',
+                price:'سعر الكشف : ${batna[index]['price']}  ',
                 address:'العنوان : ${batna[index]['address']}',
                 dates:'مواعيد العمل : ${batna[index]['dates']}',
-                phone:'رقم الموبايل : ${batna[index]['phone']}',
+                phone:'tel: ${batna[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });

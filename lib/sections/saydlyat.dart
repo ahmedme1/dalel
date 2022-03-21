@@ -54,10 +54,10 @@ class _SaydlyatState extends State<Saydlyat> {
           itemBuilder: (context,index)
           {
             return Cust_ForLab(
-                text:'صيدلية : ${saydlyat[index]['name']}',
+                text:' ${saydlyat[index]['name']}',
                 address:'العنوان : ${saydlyat[index]['address']}',
                 dates:'مواعيد العمل : ${saydlyat[index]['dates']}',
-                phone:'رقم الموبايل : ${saydlyat[index]['phone']}',
+                phone:'tel: ${saydlyat[index]['phone']}',
                 image: AssetImage('images/d16.png'),
                 onTap: (){
                 });

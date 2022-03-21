@@ -58,7 +58,7 @@ class _MasalekState extends State<Masalek> {
                 price:'سعر الكشف : ${msalek[index]['price']} جنيه ',
                 address:'العنوان : ${msalek[index]['address']}',
                 dates:'مواعيد العمل : ${msalek[index]['dates']}',
-                phone:'رقم الموبايل : ${msalek[index]['phone']}',
+                phone:'tel: ${msalek[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });

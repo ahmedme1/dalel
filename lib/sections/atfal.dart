@@ -55,10 +55,10 @@ class _AtfalState extends State<Atfal> {
           {
             return Cust_Container(
                 text:'${atfal[index]['name']}',
-                price:'سعر الكشف : ${atfal[index]['price']} جنيه ',
+                price:'سعر الكشف : ${atfal[index]['price']}  ',
                 address:'العنوان : ${atfal[index]['address']}',
                 dates:'مواعيد العمل : ${atfal[index]['dates']}',
-                phone:'رقم الموبايل : ${atfal[index]['phone']}',
+                phone:'tel: ${atfal[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });

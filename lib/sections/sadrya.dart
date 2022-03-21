@@ -58,7 +58,7 @@ class _SadryaState extends State<Sadrya> {
                 price:'سعر الكشف : ${sadrya[index]['price']} جنيه ',
                 address:'العنوان : ${sadrya[index]['address']}',
                 dates:'مواعيد العمل : ${sadrya[index]['dates']}',
-                phone:'رقم الموبايل : ${sadrya[index]['phone']}',
+                phone:'tel: ${sadrya[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });

@@ -55,10 +55,10 @@ class _AsnanState extends State<Asnan> {
           {
             return Cust_Container(
                 text:'${asnan[index]['name']}',
-                price:'سعر الكشف : ${asnan[index]['price']} جنيه ',
+                price:'سعر الكشف : ${asnan[index]['price']}  ',
                 address:'العنوان : ${asnan[index]['address']}',
                 dates:'مواعيد العمل : ${asnan[index]['dates']}',
-                phone:'رقم الموبايل : ${asnan[index]['phone']}',
+                phone:'tel: ${asnan[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });

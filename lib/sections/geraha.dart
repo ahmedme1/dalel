@@ -3,24 +3,24 @@ import 'package:dalell/component.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Anf_ozon extends StatefulWidget {
-   Anf_ozon({Key? key}) : super(key: key);
+class Geraha extends StatefulWidget {
+  Geraha({Key? key}) : super(key: key);
 
   @override
-  State<Anf_ozon> createState() => _Anf_ozonState();
+  State<Geraha> createState() => _GerahaState();
 }
 
-class _Anf_ozonState extends State<Anf_ozon> {
-  List anf = [];
-  CollectionReference anfDoc = FirebaseFirestore.instance.collection('anf');
+class _GerahaState extends State<Geraha> {
+  List geraha = [];
+  CollectionReference gerahaDoc = FirebaseFirestore.instance.collection('geraha');
   getData()async
   {
-    var responseBody = await anfDoc.get();
+    var responseBody = await gerahaDoc.get();
     responseBody.docs.forEach((element) {
       setState(() {
-        anf.add(element.data());
+        geraha.add(element.data());
       });
-      print(anf);
+      print(geraha);
     });
   }
   @override
@@ -34,7 +34,7 @@ class _Anf_ozonState extends State<Anf_ozon> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Text('أنف و أذن و حنجرة',style: GoogleFonts.cairo(fontSize: 25,color: Colors.black)),
+        title: Text('الجراحة العامة',style: GoogleFonts.cairo(fontSize: 25,color: Colors.black)),
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
@@ -53,17 +53,18 @@ class _Anf_ozonState extends State<Anf_ozon> {
         child: ListView.builder(
           itemBuilder: (context,index)
           {
+
             return Cust_Container(
-                text:'${anf[index]['name']}',
-                price:'سعر الكشف : ${anf[index]['price']}  ',
-                address:'العنوان : ${anf[index]['address']}',
-                dates:'مواعيد العمل : ${anf[index]['dates']}',
-                phone:'tel: ${anf[index]['phone']}',
+                text:'${geraha[index]['name']}',
+                price:'سعر الكشف : ${geraha[index]['price']}  ',
+                address:'العنوان : ${geraha[index]['address']}',
+                dates:'مواعيد العمل : ${geraha[index]['dates']}',
+                phone:'tel: ${geraha[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });
-          },
-          itemCount: anf.length,
+            },
+          itemCount: geraha.length,
 
           physics: BouncingScrollPhysics(),
 

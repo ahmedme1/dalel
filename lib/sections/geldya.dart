@@ -55,10 +55,10 @@ class _GeldyaState extends State<Geldya> {
           {
             return Cust_Container(
                 text:'${geldya[index]['name']}',
-                price:'سعر الكشف : ${geldya[index]['price']} جنيه ',
+                price:'سعر الكشف : ${geldya[index]['price']}',
                 address:'العنوان : ${geldya[index]['address']}',
                 dates:'مواعيد العمل : ${geldya[index]['dates']}',
-                phone:'رقم الموبايل : ${geldya[index]['phone']}',
+                phone:'tel: ${geldya[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });

@@ -55,10 +55,10 @@ class _EzamState extends State<Ezam> {
           {
             return Cust_Container(
                 text:'${ezam[index]['name']}',
-                price:'سعر الكشف : ${ezam[index]['price']} جنيه ',
+                price:'سعر الكشف : ${ezam[index]['price']}  ',
                 address:'العنوان : ${ezam[index]['address']}',
                 dates:'مواعيد العمل : ${ezam[index]['dates']}',
-                phone:'رقم الموبايل : ${ezam[index]['phone']}',
+                phone:'tel: ${ezam[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });

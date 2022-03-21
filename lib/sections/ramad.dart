@@ -58,7 +58,7 @@ class _RamadState extends State<Ramad> {
                 price:'سعر الكشف : ${ramad[index]['price']} جنيه ',
                 address:'العنوان : ${ramad[index]['address']}',
                 dates:'مواعيد العمل : ${ramad[index]['dates']}',
-                phone:'رقم الموبايل : ${ramad[index]['phone']}',
+                phone:'tel: ${ramad[index]['phone']}',
                 image: AssetImage('images/d1.png'),
                 onTap: (){
                 });
