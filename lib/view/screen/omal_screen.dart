@@ -54,20 +54,22 @@
 //             ListView.builder(
 //                 physics: NeverScrollableScrollPhysics(),
 //                 shrinkWrap: true,
+//                 itemCount: omal.length,
 //                 itemBuilder: (context,index)
 //                 {
 //                   return  Padding(
 //                     padding: const EdgeInsets.only(right: 10,left: 10,bottom: 15),
 //                     child: Container(
 //                       child: Column(
-//                         crossAxisAlignment: CrossAxisAlignment.end,
+//
+//                         crossAxisAlignment: CrossAxisAlignment.center,
 //                         children: [
-//                           Text('${omal[index]}',style: GoogleFonts.cairo(fontSize: 20),textAlign: TextAlign.end,),
+//                           Text('${omal[index]}',style: GoogleFonts.cairo(fontSize: 20,color: Colors.red.shade600),textAlign: TextAlign.end,),
 //
 //                         ],
 //                       ),
 //                       padding: EdgeInsets.only(right: 20),
-//                       height: 120,
+//                       height: 50,
 //                       width: double.infinity,
 //                       decoration: BoxDecoration(
 //                         borderRadius: BorderRadius.circular(12),

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class SplashBody extends StatefulWidget {
   const SplashBody({Key? key}) : super(key: key);
 

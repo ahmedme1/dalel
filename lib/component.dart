@@ -89,15 +89,17 @@ class Cust_Gest extends StatelessWidget {
   VoidCallback onChanged;
   String? text;
   ImageProvider? imago;
+  int? width;
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       onTap: onChanged,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          width: 120,
-          height: 120,
+          width: 100,
+          height:  120,
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(

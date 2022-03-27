@@ -1,49 +1,25 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dalell/component.dart';
-import 'package:dalell/sections/Ezam.dart';
-import 'package:dalell/sections/alb.dart';
-import 'package:dalell/sections/anfwozon.dart';
-import 'package:dalell/sections/asnan.dart';
-import 'package:dalell/sections/atfal.dart';
-import 'package:dalell/sections/batna.dart';
-import 'package:dalell/sections/geldya.dart';
-import 'package:dalell/sections/geraha.dart';
-import 'package:dalell/sections/labs.dart';
-import 'package:dalell/sections/msalek.dart';
-import 'package:dalell/sections/nesawtawled.dart';
-import 'package:dalell/sections/ramad.dart';
-import 'package:dalell/sections/sadrya.dart';
-import 'package:dalell/sections/saydlyat.dart';
+import 'package:dalell/controller/controller.dart';
+import 'package:dalell/view/sections/Ezam.dart';
+import 'package:dalell/view/sections/anfwozon.dart';
+import 'package:dalell/view/sections/asnan.dart';
+import 'package:dalell/view/sections/atfal.dart';
+import 'package:dalell/view/sections/batna.dart';
+import 'package:dalell/view/sections/geldya.dart';
+import 'package:dalell/view/sections/geraha.dart';
+import 'package:dalell/view/sections/labs.dart';
+import 'package:dalell/view/sections/msalek.dart';
+import 'package:dalell/view/sections/nesawtawled.dart';
+import 'package:dalell/view/sections/ramad.dart';
+import 'package:dalell/view/sections/sadrya.dart';
+import 'package:dalell/view/sections/saydlyat.dart';
+import 'package:dalell/view/sections/alb.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  List elanList = [];
-
-  CollectionReference elan = FirebaseFirestore.instance.collection('elan');
-
-  getData() async
-  {
-    var responseBody = await elan.get();
-    responseBody.docs.forEach((element) {
-      setState(() {
-        elanList.add(element.data());
-      });
-      print(elanList);
-    });
-  }
-
-  @override
-  void initState() {
-    getData();
-    super.initState();
-  }
+class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -58,15 +34,20 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: 100,
                 width: double.infinity,
-                child: ListView.builder(
-                  itemBuilder: (context, index) {
-                    return Text(
-                      '${elanList[index]['body']}',
-                      style: GoogleFonts.cairo(fontSize: 15, color: Colors.red),
-                      textAlign: TextAlign.end,
+                child: GetBuilder<HomeController>(
+                  init: HomeController(),
+                  builder: (controller) {
+                    return ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Text(
+                          '${controller.elanList[index]['body']}',
+                          style: GoogleFonts.cairo(fontSize: 15, color: Colors.red),
+                          textAlign: TextAlign.end,
+                        );
+                      },
+                      itemCount: controller.elanList.length,
                     );
-                  },
-                  itemCount: elanList.length,
+                  }
                 ),
               ),
               CircleAvatar(
@@ -98,6 +79,7 @@ class _HomePageState extends State<HomePage> {
               Stack(
                 children: [
                   Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
