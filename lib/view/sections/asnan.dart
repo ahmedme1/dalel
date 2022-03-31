@@ -9,30 +9,33 @@ import 'package:google_fonts/google_fonts.dart';
 class Asnan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('الأسنان',style: GoogleFonts.cairo(fontSize: 25,color: Colors.black)),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: ()
-          {
-            Get.back();
-          },
-          icon: Icon(Icons.arrow_back_ios_rounded,
-            color: Colors.black,
+    return GetBuilder<AsnanController>(
+      init: AsnanController(),
+      builder: (controller) {
+        return Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            actions: [
+              Cust_Column(text: '${controller.asnan.length}'),
+            ],
+            centerTitle: true,
+            title: Text('الأسنان',style: GoogleFonts.cairo(fontSize: 25,color: Colors.black)),
+            backgroundColor: Colors.white,
+            elevation: 0,
+            leading: IconButton(
+              onPressed: ()
+              {
+                Get.back();
+              },
+              icon: Icon(Icons.arrow_back_ios_rounded,
+                color: Colors.black,
 
+              ),
+            ),
           ),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: GetBuilder<AsnanController>(
-          init: AsnanController(),
-          builder: (controller){
-            return ListView.builder(
+          body: Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: ListView.builder(
               itemBuilder: (context,index)
               {
                 return Cust_Container(
@@ -52,12 +55,12 @@ class Asnan extends StatelessWidget {
 
 
 
-            );
-          },
-        ),
-      ),
+            ),
+          ),
 
 
+        );
+      }
     );
   }
 }

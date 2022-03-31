@@ -201,3 +201,26 @@ class Cust_ForLab extends StatelessWidget {
   }
 }
 
+
+
+class Cust_Column extends StatelessWidget {
+   Cust_Column({Key? key,required this.text}) : super(key: key);
+String text ;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.only(right: 10),
+          child: Text('العدد',style: GoogleFonts.cairo(color: Colors.black,fontWeight: FontWeight.bold),),
+        ),
+        Container(
+          padding: EdgeInsets.only(right: 10),
+          child: Text(text,style: GoogleFonts.cairo(color: Colors.black,fontWeight: FontWeight.bold),),
+        ),
+      ],
+    );
+  }
+}
+
+

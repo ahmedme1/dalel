@@ -11,30 +11,33 @@ class Ramad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(' الرمد',style: GoogleFonts.cairo(fontSize: 25,color: Colors.black)),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: ()
-          {
-           Get.back();
-          },
-          icon: Icon(Icons.arrow_back_ios_rounded,
-            color: Colors.black,
+    return GetBuilder<RamadController>(
+      init: RamadController(),
+      builder: (controller) {
+        return Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            actions: [
+              Cust_Column(text: '${controller.ramad.length}'),
+            ],
+            centerTitle: true,
+            title: Text(' الرمد',style: GoogleFonts.cairo(fontSize: 25,color: Colors.black)),
+            backgroundColor: Colors.white,
+            elevation: 0,
+            leading: IconButton(
+              onPressed: ()
+              {
+               Get.back();
+              },
+              icon: Icon(Icons.arrow_back_ios_rounded,
+                color: Colors.black,
 
+              ),
+            ),
           ),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: GetBuilder<RamadController>(
-          init: RamadController(),
-          builder: (controller) {
-            return ListView.builder(
+          body: Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: ListView.builder(
               itemBuilder: (context,index)
               {
                 return Cust_Container(
@@ -54,12 +57,12 @@ class Ramad extends StatelessWidget {
 
 
 
-            );
-          }
-        ),
-      ),
+            ),
+          ),
 
 
+        );
+      }
     );
   }
 }
