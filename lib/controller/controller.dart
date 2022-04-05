@@ -1,31 +1,47 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:get/get.dart';
 
 
 
 class HomeController extends GetxController{
 
-  List elanList = [];
-
-  CollectionReference elan = FirebaseFirestore.instance.collection('elan');
-
-  getData() async
+  // List elanList = [];
+  // CollectionReference elan = FirebaseFirestore.instance.collection('elan');
+  // getData() async
+  // {
+  //   var responseBody = await elan.get();
+  //   responseBody.docs.forEach((element) {
+  //     elanList.add(element.data());
+  //    update();
+  //     print(elanList);
+  //   });
+  // }
+  // @override
+  // void onInit() {
+  //   getData();
+  //   super.onInit();
+  // }
+  late final dreff = FirebaseDatabase.instance.ref();
+  late DatabaseReference dbref ;
+  getElan()
   {
-    var responseBody = await elan.get();
-    responseBody.docs.forEach((element) {
-
-        elanList.add(element.data());
-     update();
-      print(elanList);
+    dbref.once().then((snapshot)
+    {
+      print(snapshot.snapshot.value);
+      print('++++++++++++++++++++++');
     });
-  }
-  @override
+
+    }
+    @override
   void onInit() {
-    getData();
+    dbref = FirebaseDatabase.instance.ref();
+    dbref = dreff;
     super.onInit();
   }
 
-}
+  }
+
 class AlbController extends GetxController{
   List alb = [];
   CollectionReference albDoc = FirebaseFirestore.instance.collection('alb');

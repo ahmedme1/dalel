@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'anf_detail.dart';
+
 class Anf_ozon extends StatelessWidget {
 
   @override
@@ -45,6 +47,7 @@ class Anf_ozon extends StatelessWidget {
                     phone:'tel: ${controller.anf[index]['phone']}',
                     image: AssetImage('images/d1.png'),
                     onTap: (){
+                      Get.to(AnfDetail());
                     });
               },
               itemCount: controller.anf.length,
